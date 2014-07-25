@@ -13,7 +13,7 @@ Unlike the original, it does not do anything other than colorspace conversions a
 ### Gemfile
 
 ```
-  gem "thin_kaleidoscope"
+  gem 'kaleidoscope', github: 'rickcarlino/thin_kaleidoscope'
 ```
 ### Example Code
 
