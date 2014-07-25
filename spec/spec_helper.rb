@@ -1,6 +1,4 @@
 ENV['RAILS_ENV'] ||= 'test'
-require 'active_support'
-require 'active_support/core_ext'
 require 'RMagick'
 require 'kaleidoscope'
 require 'pry'

@@ -15,7 +15,7 @@ module Kaleidoscope
     end
 
     def validate(hex)
-      unless hex.length == 7 && hex.first == '#'
+      unless hex.length == 7 && hex[0] == '#'
         raise MalformedHexValueError,
           'Hex values must be 7 letters in length and start with a `#`'
       end
