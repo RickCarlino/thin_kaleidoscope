@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'kaleidoscope/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "kaleidoscope"
+  gem.name          = "thin_kaleidoscope"
   gem.version       = Kaleidoscope::VERSION
   gem.platform      = Gem::Platform::RUBY
   gem.authors       = ["Josh Smith", "Rick Carlino"]

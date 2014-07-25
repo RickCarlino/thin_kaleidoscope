@@ -4,16 +4,16 @@ This is an adaptation to the [Kaleidoscope](https://github.com/JoshSmith/kaleido
 
 Like the original Kaleidoscope, it is able to do color proximity estimations.
 
-Unlike the original, it does not do anything else. It has 0 runtime dependencies.
+Unlike the original, it does not do anything other than colorspace conversions and color proximity matching. It makes no assumptions about usage. It has no PaperClip nor does it rely on RMagick.
 
 # Usage
 
-**NOTE:** This Gem will clobber the real Kaleidocope. If you need support for PaperClip or features other than color comparison, use the [main fork](https://github.com/JoshSmith/kaleidoscope).
+**NOTE:** This Gem will clobber the real Kaleidocope. If you need support for PaperClip or features other than color comparison/conversion, use the [main fork](https://github.com/JoshSmith/kaleidoscope).
 
 ### Gemfile
 
 ```
-  gem "thin-kaleidoscope"
+  gem "thin_kaleidoscope"
 ```
 ### Example Code
 
@@ -37,3 +37,5 @@ Unlike the original, it does not do anything else. It has 0 runtime dependencies
 
   the_match.rgb == green # => true
 ```
+# License
+  See LICENSE.txt
