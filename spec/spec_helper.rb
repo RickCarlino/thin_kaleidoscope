@@ -1,26 +1,10 @@
 ENV['RAILS_ENV'] ||= 'test'
-
-require 'rails/all'
-
-require 'rubygems'
-
 require 'active_support'
 require 'active_support/core_ext'
-
 require 'RMagick'
-
 require 'kaleidoscope'
-
-require 'active_record'
-
 require 'pry'
 
-require 'paperclip'
-
-ActiveRecord::Base.establish_connection adapter: "sqlite3", database: ":memory:"
-
-load File.dirname(__FILE__) + '/support/schema.rb'
-require File.dirname(__FILE__) + '/support/models.rb'
 
 include RSpec::Matchers
 
@@ -31,9 +15,8 @@ include RSpec::Matchers
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.before(:each) do
+  end
   config.after(:each) do
-    Kaleidoscope.configure do |config|
-      config.colors = nil
-    end
   end
 end

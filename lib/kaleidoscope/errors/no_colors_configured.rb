@@ -1,2 +1,0 @@
-class NoColorsConfiguredError < StandardError
-end

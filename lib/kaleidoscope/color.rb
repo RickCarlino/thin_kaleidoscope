@@ -5,22 +5,23 @@ module Kaleidoscope
   LAB = Struct.new(:l, :a, :b)
 
   class Color
+    attr_reader :rgb
 
-    def initialize(rgb)
-      @rgb = RGB.new(rgb[:r], rgb[:g], rgb[:b])
+    def initialize(hex)
+      # #FFFFFF ==> [255, 255, 255]
+      validate(hex)
+      r, g, b = hex.delete('#').scan(/../).map(&:hex)
+      @rgb = RGB.new(r, g, b)
     end
 
-    # Create a color given a Magick::Pixel
-    def self.from_pixel(pixel)
-      # Divide by 256 to convert from 16- to 8-bit values
-      r = pixel.red / 256
-      g = pixel.green / 256
-      b = pixel.blue / 256
-
-      Color.new(r: r, g: g, b: b)
+    def validate(hex)
+      unless hex.length == 7 && hex.first == '#'
+        raise MalformedHexValueError,
+          'Hex values must be 7 letters in length and start with a `#`'
+      end
     end
 
-    # Create a color given a hexadecimal number, e.g. FFFFFF
+    # Create a color given a hexadecimal number, e.g. #FFFFFF
     def self.from_hex(hex)
       hex = strip_hex(hex)
       r, g, b = hex.scan(/../).map(&:hex)
@@ -64,7 +65,8 @@ module Kaleidoscope
     end
 
     def to_hex
-      '%02x%02x%02x' % [red, green, blue]
+      hex = '%02x%02x%02x' % [red, green, blue]
+      "\##{hex}"
     end
 
     def to_lab
@@ -80,8 +82,6 @@ module Kaleidoscope
       def self.strip_hex(hex)
         hex.delete('#')
       end
-
-      attr_reader :rgb
 
       def xyz
         @xyz ||= calculate_xyz

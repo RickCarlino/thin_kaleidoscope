@@ -5,7 +5,7 @@ module Kaleidoscope
 
     def initialize(hex_values)
       @colors = hex_values.map { |hex|
-        Color.from_hex(hex)
+        Color.new(hex)
       }
     end
 
