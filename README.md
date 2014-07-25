@@ -18,24 +18,19 @@ Unlike the original, it does not do anything other than colorspace conversions a
 ### Example Code
 
 ```ruby
-
   #Some colors...
-
   red      = '#FF0000'
   green    = '#00FF00'
   blue     = '#0000FF'
 
   # Define the colors to compare by...
-
   your_colors = Kaleidoscope::ColorSet.new [red, green, blue]
-  
-  # Define the color that you want to match...
 
+  # Define the color that you want to match...
   dark_green = Kaleidoscope::Color.new('#006400')
 
   the_match = your_colors.find_closest_to(dark_green)
-
-  the_match.rgb == green # => true
+  expect(the_match.rgb.to_hex).to eq(green) # => true
 ```
 # License
   See LICENSE.txt
