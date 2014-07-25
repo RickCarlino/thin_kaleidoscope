@@ -1,5 +1,4 @@
 ENV['RAILS_ENV'] ||= 'test'
-require 'RMagick'
 require 'kaleidoscope'
 require 'pry'
 
