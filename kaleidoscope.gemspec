@@ -4,14 +4,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'kaleidoscope/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "kaleidoscope"
+  gem.name          = "thin-kaleidoscope"
   gem.version       = Kaleidoscope::VERSION
   gem.platform      = Gem::Platform::RUBY
-  gem.authors       = ["Josh Smith"]
+  gem.authors       = ["Josh Smith", "Rick Carlino"]
   gem.email         = ["joshdotsmith@gmail.com"]
   gem.description   = %q{Color search for Rails}
-  gem.summary       = %q{Kaleidoscope is color search for Rails using Active Record and Paperclip. The intent behind it was to index a database of images by color for quick retrieval.}
-  gem.homepage      = "https://github.com/JoshSmith/kaleidoscope"
+  gem.summary       = %q{A trimmed down version of Kaleidoscope}
+  gem.homepage      = "https://github.com/rickcarlino/kaleidoscope"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

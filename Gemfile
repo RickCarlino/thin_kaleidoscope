@@ -7,7 +7,3 @@ gemspec
 
 gem 'pry'
 gem 'pry-nav'
-
-group :development, :test do
-  gem 'sqlite3'
-end
