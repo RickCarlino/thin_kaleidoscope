@@ -8,7 +8,7 @@ module Kaleidoscope
     attr_reader :rgb
 
     def initialize(hex)
-      # #FFFFFF ==> [255, 255, 255]
+      # '#FFFFFF' ==> [255, 255, 255]
       validate(hex)
       r, g, b = hex.delete('#').scan(/../).map(&:hex)
       @rgb = RGB.new(r, g, b)
