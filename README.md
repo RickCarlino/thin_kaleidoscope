@@ -19,9 +19,9 @@ Unlike the original, it does not do anything other than colorspace conversions a
 
 ```ruby
   #Some colors...
-  red      = '#FF0000'
-  green    = '#00FF00'
-  blue     = '#0000FF'
+  red      = '#ff0000'
+  green    = '#00ff00'
+  blue     = '#0000ff'
 
   # Define the colors to compare by...
   your_colors = Kaleidoscope::ColorSet.new [red, green, blue]
@@ -30,7 +30,7 @@ Unlike the original, it does not do anything other than colorspace conversions a
   dark_green = Kaleidoscope::Color.new('#006400')
 
   the_match = your_colors.find_closest_to(dark_green)
-  expect(the_match.rgb.to_hex).to eq(green) # => true
+  expect(the_match.to_hex).to eq(green)
 ```
 # License
   See LICENSE.txt
