@@ -1,0 +1,2 @@
+class MalformedHexValueError < StandardError
+end

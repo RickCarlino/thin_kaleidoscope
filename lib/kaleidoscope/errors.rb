@@ -1,0 +1,1 @@
+require 'kaleidoscope/errors/malformed_hex_value'
