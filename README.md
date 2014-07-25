@@ -27,7 +27,7 @@ Unlike the original, it does not do anything other than colorspace conversions a
 
   # Define the colors to compare by...
 
-  your_colors = Kaleidoscope::ColorSet.new [Red, Green, Blue]
+  your_colors = Kaleidoscope::ColorSet.new [red, green, blue]
   
   # Define the color that you want to match...
 
